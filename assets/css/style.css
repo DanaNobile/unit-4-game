@@ -3,7 +3,7 @@ h1 {
     background-color: rgb(190, 109, 33);
     font-size: 36px;
     font-weight: 300;
-    width: 275px;
+    width: 285px;
     height: 70px;
     text-align: center;
     margin-top: 50px;
@@ -15,9 +15,20 @@ h2{
     margin-left: 10px;
     margin-right: 10px;
     padding-top: 15px;
-    font-size: 15px;
+    font-size: 12px;
 }
 
+h3{
+    font-size: 15px;
+    color: white;
+    margin-left: 10px;
+}
+
+h4{
+    font-size: 25px;
+    color: white;
+    margin-left: 10px;
+}
 body{
     background-image: url("../images/zigzag.jpg");
 }
@@ -26,6 +37,8 @@ p{
     color: green;
     font-weight: 500px;
     padding-left: 10px;
+    margin-top: 5px;
+    padding-top: 15px;
 
 }
 
@@ -43,6 +56,11 @@ img{
     margin-left: 25px;
 }
 
+.scoreBoxContainer{
+    width: 420px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
 .randomNumber{
     background-color: rgb(46, 129, 46);
     width: 200px;
@@ -53,5 +71,17 @@ img{
     width: 80px;
     height: 100px;
     line-height: 20px;
-    margin-top: 20px;
+    /* margin-top: 20px; */
+}
+
+.totalScore{
+background-color: rgb(32, 156, 156);
+width: 200px;
+height: 30px;
+}
+
+.scoreTally{
+    background-color: rgb(32, 156, 156);
+    width: 200px;
+    height: 100px;
 }
