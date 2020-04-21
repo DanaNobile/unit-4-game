@@ -43,37 +43,42 @@ $(document).ready(function () {
     var losses = 0;
     var totalScore = 0;
     var imageValue = [];
-
-    var imageClick = 0;
-
+    let counter = 0;
 
 
+    var gemOptions = ["../images/bird.png", "../images/tree.png", "../images/heart.png", "../images/gem.png"]
 
+    //Displays:
+    $("winCount").text(wins);
+    $("loseCount").text(losses);
+    $("randomNumber").text(computerChoice);
+    $("score").text(totalScore);
+
+    // Computer Random Number:
+
+    $(function randomNumber(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
+        document.write(randomNumber(19, 120));
+        console.log(randomNumber);
+    });
 
 
     //These are image button functions
-    $(function () {
-        $(document).on('click', '#birdImage', function () {
-            console.log("bird picked");
-        });
+    $(".crystal-image").on("click", function () {
+
+        // Clicking the button triggers an alert message.
+        console.log("crystal clicked");
+        // This makes counter go up each time user clicks a crystal
+        counter += 1;
+        console.log("crystal clicked" + counter);
+
     });
 
-    $(function () {
-        $(document).on('click', '#treeImage', function () {
-            console.log("tree picked");
-        });
-    });
 
-    $(function () {
-        $(document).on('click', '#heartImage', function () {
-            console.log("heart picked");
-        });
-    });
 
-    $(function () {
-        $(document).on('click', '#gemImage', function () {
-            console.log("gem picked");
-        });
-    });
+
+
+
+
 
 });
