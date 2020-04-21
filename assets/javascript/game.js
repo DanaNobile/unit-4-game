@@ -1,7 +1,7 @@
 
 // Computer generate random number between 19-120
 // Radom number is displayed on screen at start of game
-// Make images into buttons
+// Make images interactive
 // Assign random value to image buttons between 1-12
 // When player clicks button, value is added to score (counter)
 // Win => total score = random number displayed at beginning
@@ -50,51 +50,72 @@ $(document).ready(function () {
     let imageCrystal = ["../images/bird.png", "../images/tree.png", "../images/heart.png", "../images/gem.png"]
 
 
-    // Computer Random Number:
+    // This generates COMPUTER Random Number:
 
 
     $(function randomNumber() {
         var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
         $(".computerChoice").text(randomNumber);
-        // document.write(randomNumber);
         console.log(randomNumber)
     });
 
+    // This generates CRYSTAL Random Number and Counts Clicks:
 
 
-
-
-    // for (var i = 0; i < imageValue.length; i++) {
-    //     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
-
-    // }
-
-
-    //Displays:
-    $("winCount").text(wins);
-    $("loseCount").text(losses);
-    $("randomNumber").text(computerChoice);
-    $("score").text(totalScore);
-
-
-
-
-    //These are image button functions
-    $(".crystal-image").on("click", function () {
-
-        // Clicking the button triggers an alert message.
-        console.log("crystal clicked");
-        // This makes counter go up each time user clicks a crystal
+    $("#crystals").on("click", function () {
+        var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
         counter += 1;
-        console.log("crystal clicked" + counter);
+        console.log(randomCNumber);
+        console.log("Crystal Clicked" + counter);
+
+
+        $(function score() {
+            var totalScore = (randomCNumber);
+            $(".scoreTally").text(totalScore);
+        });
 
     });
+    //////Need to research how to hold value throughout session and regenerate upon load
 
-
-
+    // Display and Add Points
 
 
 
 
 
 });
+
+// for (var i = 0; i < imageValue.length; i++) {
+//     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
+
+// }
+
+
+// //Displays:
+// $("winCount").text(wins);
+// // $("loseCount").text(losses);
+// $("randomNumber").text(computerChoice);
+// $("score").text(totalScore);
+
+
+
+
+// //These are image button functions
+// $(".crystal-image").on("click", function () {
+
+//     // Clicking the button triggers an alert message.
+//     console.log("crystal clicked");
+//     // This makes counter go up each time user clicks a crystal
+//     counter += 1;
+//     console.log("crystal clicked" + counter);
+
+// });
+
+
+
+
+
+
+
+
+// // })
