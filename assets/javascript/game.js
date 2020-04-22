@@ -29,61 +29,37 @@
 // document.write(randomNumber(19, 120));
 
 
-// This function resets the game
-function reset() {
-
-}
 
 
-// Game Starts
 
-$(document).ready(function () {
+// $(".crystals").on("click", function () {
+//     var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
+//     counter += 1;
+//     console.log(randomCNumber);
+//     console.log("Crystal Clicked" + counter);
+// for (var i = 0; i < imageCrystal.length; i++) {
+//     console.log("something")
+// }
 
-    // Global Variables
-
-    var wins = 0;
-    var computerChoice = [];
-    var losses = 0;
-    var totalScore = 0;
-    var imageValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
-    let counter = 0;
-    let imageCrystal = ["../images/bird.png", "../images/tree.png", "../images/heart.png", "../images/gem.png"]
+// for loop for maybe only doing this once?
 
 
-    // This generates COMPUTER Random Number:
+// $(function score() {
+//     var totalScore = randomCNumber;
+//     $(".scoreTally").text(randomCNumber);
+//     //counter = counter + randomCNumber;
+// });
 
+//     });
+//////Need to research how to hold value throughout session and regenerate upon load
 
-    $(function randomNumber() {
-        var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
-        $(".computerChoice").text(randomNumber);
-        console.log(randomNumber)
-    });
-
-    // This generates CRYSTAL Random Number and Counts Clicks:
-
-
-    $("#crystals").on("click", function () {
-        var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
-        counter += 1;
-        console.log(randomCNumber);
-        console.log("Crystal Clicked" + counter);
-
-
-        $(function score() {
-            var totalScore = (randomCNumber);
-            $(".scoreTally").text(totalScore);
-        });
-
-    });
-    //////Need to research how to hold value throughout session and regenerate upon load
-
-    // Display and Add Points
+// Display and Add Points
 
 
 
 
 
-});
+// });
 
 // for (var i = 0; i < imageValue.length; i++) {
 //     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
@@ -111,11 +87,51 @@ $(document).ready(function () {
 
 // });
 
+// This function resets the game
+function reset() {
+
+}
+
+var counter = 0;
+// Game Starts
+
+$(document).ready(function () {
+
+    // Global Variables
+
+    var wins = 0;
+    var computerChoice = [];
+    var losses = 0;
+    var totalScore = 0;
+    var imageValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    let counter = 0;
 
 
 
+    // This generates COMPUTER Random Number:
 
 
+    $(function randomNumber() {
+        var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
+        $(".computerChoice").text(randomNumber);
+        console.log(randomNumber)
+    });
 
+    // This generates CRYSTAL Random Number and Counts Clicks:
+    $(function crystalValue() {
 
-// // })
+        for (var i = 0; i < 4; i++) {
+            var crystalValues = Math.floor(Math.random() * (12 - 1) + 1);
+            console.log(crystalValues);
+        }
+
+        $('#crystal1').attr('value', crystalValues[0]);
+
+        $('#crystal2').attr('value', crystalValues[1]);
+
+        $('#crystal3').attr('value', crystalValues[2]);
+
+        $('#crystal4').attr('value', crystalValues[3]);
+    });
+
+});

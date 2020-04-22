@@ -74,6 +74,12 @@ img{
     /* margin-top: 20px; */
 }
 
+
+.totalScoreContainer{
+    width: 420px;
+    margin-left: 25px;
+    margin-top: 25px;
+}
 .totalScore{
 background-color: rgb(32, 156, 156);
 width: 200px;
