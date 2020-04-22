@@ -41,7 +41,7 @@
 //     console.log("something")
 // }
 
-// for loop for maybe only doing this once?
+
 
 
 // $(function score() {
@@ -117,7 +117,7 @@ $(document).ready(function () {
         console.log(randomNumber)
     });
 
-    // This generates CRYSTAL Random Number and Counts Clicks:
+    // This generates CRYSTAL Random Number:
     $(function crystalValue() {
 
         for (var i = 0; i < 4; i++) {
@@ -132,6 +132,18 @@ $(document).ready(function () {
         $('#crystal3').attr('value', crystalValues[2]);
 
         $('#crystal4').attr('value', crystalValues[3]);
+
+        $(".crystalButton").on("click", function () {
+            console.log("clicked");
+
+            //     console.log("Crystal Clicked" + counter);
+        });
     });
+
+
+
+
+
+
 
 });
