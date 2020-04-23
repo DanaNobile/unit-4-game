@@ -28,6 +28,14 @@
 // // Call function within range for computerChoice
 // document.write(randomNumber(19, 120));
 
+// $('#crystal1').attr('value', crystalValues[0]);
+
+// $('#crystal2').attr('value', crystalValues[1]);
+
+// $('#crystal3').attr('value', crystalValues[2]);
+
+// $('#crystal4').attr('value', crystalValues[3]);
+
 
 
 
@@ -87,6 +95,28 @@
 
 // });
 
+// $(function crystalValue1() {
+//     var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
+//     $("crystal1")
+
+// crystalValues = [];
+
+// for (var i = 0; i < 4; i++) {
+//     var crystalValues = Math.floor(Math.random() * (12 - 1) + 1);
+//     console.log(crystalValues);
+
+
+
+
+// }
+
+// // var score = (crystalValues[]);
+// $(".scoreTally").text(crystalValues);
+// $(".crystalButton").on("click", function () {
+//     console.log("clicked");
+
+// });
+
 // This function resets the game
 function reset() {
 
@@ -94,6 +124,8 @@ function reset() {
 
 var counter = 0;
 // Game Starts
+
+
 
 $(document).ready(function () {
 
@@ -103,10 +135,21 @@ $(document).ready(function () {
     var computerChoice = [];
     var losses = 0;
     var totalScore = 0;
-    var imageValue = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
     let counter = 0;
+    var crystals = 0;
+    var crystal1 = 0;
+    var crystal2 = 0;
+    var crystal3 = 0;
+    var crystal4 = 0;
 
+    function startGame() {
+        crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
+        crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
+        crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
+        crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
+    }
 
+    startGame()
 
     // This generates COMPUTER Random Number:
 
@@ -117,33 +160,31 @@ $(document).ready(function () {
         console.log(randomNumber)
     });
 
-    // This generates CRYSTAL Random Number:
-    $(function crystalValue() {
+    // Crystals
 
-        for (var i = 0; i < 4; i++) {
-            var crystalValues = Math.floor(Math.random() * (12 - 1) + 1);
-            console.log(crystalValues);
-        }
-
-        $('#crystal1').attr('value', crystalValues[0]);
-
-        $('#crystal2').attr('value', crystalValues[1]);
-
-        $('#crystal3').attr('value', crystalValues[2]);
-
-        $('#crystal4').attr('value', crystalValues[3]);
-
-        $(".crystalButton").on("click", function () {
-            console.log("clicked");
-
-            //     console.log("Crystal Clicked" + counter);
-        });
+    $("#crystal1").on("click", function () {
+        totalScore = crystal1 + totalScore
+        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
     });
 
-
-
-
-
-
+    $("#crystal2").on("click", function () {
+        totalScore = crystal2 + totalScore
+        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+    });
+    $("#crystal3").on("click", function () {
+        totalScore = crystal3 + totalScore
+        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+    });
+    $("#crystal4").on("click", function () {
+        totalScore = crystal4 + totalScore
+        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+    });
 
 });
+
+
+
+
+
+
+
