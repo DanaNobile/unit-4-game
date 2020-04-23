@@ -132,56 +132,76 @@ $(document).ready(function () {
     // Global Variables
 
     var wins = 0;
-    var computerChoice = [];
     var losses = 0;
     var totalScore = 0;
     let counter = 0;
-    var crystals = 0;
     var crystal1 = 0;
     var crystal2 = 0;
     var crystal3 = 0;
     var crystal4 = 0;
 
+
+
+
     function startGame() {
+        // This generates random crystal numbers beteen 1-12:
         crystal1 = Math.floor(Math.random() * (12 - 1) + 1);
         crystal2 = Math.floor(Math.random() * (12 - 1) + 1);
         crystal3 = Math.floor(Math.random() * (12 - 1) + 1);
         crystal4 = Math.floor(Math.random() * (12 - 1) + 1);
+        console.log(crystal1);
+        console.log(crystal2);
+        console.log(crystal3);
+        console.log(crystal4);
     }
-
-    startGame()
-
     // This generates COMPUTER Random Number:
 
 
-    $(function randomNumber() {
-        var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
-        $(".computerChoice").text(randomNumber);
-        console.log(randomNumber)
-    });
+    // $(function randomNumber() {
+    var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
+    $(".computerChoice").text(randomNumber);
+    console.log(randomNumber);
+    // });
 
-    // Crystals
+    startGame();
 
+
+    // This adds crystal value to total score: 
     $("#crystal1").on("click", function () {
         totalScore = crystal1 + totalScore
         $(".scoreTally").html("<h4>" + totalScore + "</h4>")
     });
 
+
     $("#crystal2").on("click", function () {
         totalScore = crystal2 + totalScore
         $(".scoreTally").html("<h4>" + totalScore + "</h4>")
     });
+
     $("#crystal3").on("click", function () {
         totalScore = crystal3 + totalScore
         $(".scoreTally").html("<h4>" + totalScore + "</h4>")
     });
+
     $("#crystal4").on("click", function () {
         totalScore = crystal4 + totalScore
         $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+        if (totalScore === randomNumber) {
+            $("#wins").html("<h2>" + wins "</h2>");
+            console.log("win")
+        }
+
+        else if (totalScore > randomNumber) {
+            $("#losses").html("<h2>" + losses + "</h2>");
+            console.log("loss")
+        }
     });
 
-});
 
+
+
+
+});
 
 
 
