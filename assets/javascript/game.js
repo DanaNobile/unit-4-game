@@ -28,51 +28,21 @@
 // // Call function within range for computerChoice
 // document.write(randomNumber(19, 120));
 
-// $('#crystal1').attr('value', crystalValues[0]);
-
-// $('#crystal2').attr('value', crystalValues[1]);
-
-// $('#crystal3').attr('value', crystalValues[2]);
-
-// $('#crystal4').attr('value', crystalValues[3]);
 
 
 
 
 
-// $(".crystals").on("click", function () {
-//     var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
-//     counter += 1;
-//     console.log(randomCNumber);
-//     console.log("Crystal Clicked" + counter);
-// for (var i = 0; i < imageCrystal.length; i++) {
-//     console.log("something")
-// }
-
-
-
-
-// $(function score() {
-//     var totalScore = randomCNumber;
-//     $(".scoreTally").text(randomCNumber);
-//     //counter = counter + randomCNumber;
-// });
-
-//     });
-//////Need to research how to hold value throughout session and regenerate upon load
-
-// Display and Add Points
 
 
 
 
 
-// });
 
-// for (var i = 0; i < imageValue.length; i++) {
-//     imageCrystal.attr("data-crystalvalue", numberOptions[i]);
 
-// }
+
+
+
 
 
 // //Displays:
@@ -84,48 +54,6 @@
 
 
 
-// //These are image button functions
-// $(".crystal-image").on("click", function () {
-
-//     // Clicking the button triggers an alert message.
-//     console.log("crystal clicked");
-//     // This makes counter go up each time user clicks a crystal
-//     counter += 1;
-//     console.log("crystal clicked" + counter);
-
-// });
-
-// $(function crystalValue1() {
-//     var randomCNumber = Math.floor(Math.random() * (12 - 1) + 1);
-//     $("crystal1")
-
-// crystalValues = [];
-
-// for (var i = 0; i < 4; i++) {
-//     var crystalValues = Math.floor(Math.random() * (12 - 1) + 1);
-//     console.log(crystalValues);
-
-
-
-
-// }
-
-// // var score = (crystalValues[]);
-// $(".scoreTally").text(crystalValues);
-// $(".crystalButton").on("click", function () {
-//     console.log("clicked");
-
-// });
-
-// This function resets the game
-function reset() {
-
-}
-
-var counter = 0;
-// Game Starts
-
-
 
 $(document).ready(function () {
 
@@ -134,13 +62,10 @@ $(document).ready(function () {
     var wins = 0;
     var losses = 0;
     var totalScore = 0;
-    let counter = 0;
     var crystal1 = 0;
     var crystal2 = 0;
     var crystal3 = 0;
     var crystal4 = 0;
-
-
 
 
     function startGame() {
@@ -157,52 +82,87 @@ $(document).ready(function () {
     // This generates COMPUTER Random Number:
 
 
-    // $(function randomNumber() {
-    var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
-    $(".computerChoice").text(randomNumber);
-    console.log(randomNumber);
-    // });
+    $(function randomNumber() {
+        var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
+        $(".computerChoice").text(randomNumber);
+        console.log(randomNumber);
+        // });
 
-    startGame();
+        startGame();
 
 
-    // This adds crystal value to total score: 
-    $("#crystal1").on("click", function () {
-        totalScore = crystal1 + totalScore
-        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+        // This adds crystal value to total score: 
+        $("#crystal1").on("click", function () {
+            totalScore = crystal1 + totalScore
+            $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+            if (totalScore === randomNumber) {
+                wins++;
+                $("#wins").html("Wins: " + wins);
+                console.log("win");
+            }
+            else if (totalScore > randomNumber) {
+                losses++
+                $("#losses").text("Losses: " + losses);
+                console.log("loss");
+            }
+        });
+
+
+        $("#crystal2").on("click", function () {
+            totalScore = crystal2 + totalScore
+            $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+
+            if (totalScore === randomNumber) {
+                wins++;
+                $("#wins").html("Wins: " + wins);
+                console.log("win");
+            }
+            else if (totalScore > randomNumber) {
+                losses++
+                $("#losses").text("Losses: " + losses);
+                console.log("loss");
+            }
+        });
+
+        $("#crystal3").on("click", function () {
+            totalScore = crystal3 + totalScore
+            $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+            if (totalScore === randomNumber) {
+                wins++;
+                $("#wins").html("Wins: " + wins);
+                console.log("win");
+            }
+            else if (totalScore > randomNumber) {
+                losses++
+                $("#losses").text("Losses: " + losses);
+                console.log("loss");
+            }
+
+        });
+
+        $("#crystal4").on("click", function () {
+            totalScore = crystal4 + totalScore
+            $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+
+            if (totalScore === randomNumber) {
+                wins++;
+                $("#wins").html("Wins: " + wins);
+                console.log("win");
+            }
+            else if (totalScore > randomNumber) {
+                losses++
+                $("#losses").text("Losses: " + losses);
+                console.log("loss");
+            }
+
+        });
+
+
+
+
+
     });
-
-
-    $("#crystal2").on("click", function () {
-        totalScore = crystal2 + totalScore
-        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-    });
-
-    $("#crystal3").on("click", function () {
-        totalScore = crystal3 + totalScore
-        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-    });
-
-    $("#crystal4").on("click", function () {
-        totalScore = crystal4 + totalScore
-        $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-        if (totalScore === randomNumber) {
-            $("#wins").html("<h2>" + wins "</h2>");
-            console.log("win")
-        }
-
-        else if (totalScore > randomNumber) {
-            $("#losses").html("<h2>" + losses + "</h2>");
-            console.log("loss")
-        }
-    });
-
-
-
-
-
 });
-
 
 
 
