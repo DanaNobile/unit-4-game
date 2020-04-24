@@ -11,7 +11,7 @@
 // New game
 // New random number
 // Images get new value
-// User score and score counter start set to 0
+// User total score counter start set to 0
 // Keeps count of total wins and loses throughout game until page is refreshed
 
 
@@ -29,31 +29,11 @@
 // document.write(randomNumber(19, 120));
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // //Displays:
 // $("winCount").text(wins);
 // // $("loseCount").text(losses);
 // $("randomNumber").text(computerChoice);
 // $("score").text(totalScore);
-
-
-
-
 
 $(document).ready(function () {
 
@@ -79,10 +59,11 @@ $(document).ready(function () {
         console.log(crystal3);
         console.log(crystal4);
     }
-    // This generates COMPUTER Random Number:
+
 
 
     $(function randomNumber() {
+        // This generates COMPUTER Random Number:
         var randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
         $(".computerChoice").text(randomNumber);
         console.log(randomNumber);
@@ -95,55 +76,41 @@ $(document).ready(function () {
         $("#crystal1").on("click", function () {
             totalScore = crystal1 + totalScore
             $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-            if (totalScore === randomNumber) {
-                wins++;
-                $("#wins").html("Wins: " + wins);
-                console.log("win");
-            }
-            else if (totalScore > randomNumber) {
-                losses++
-                $("#losses").text("Losses: " + losses);
-                console.log("loss");
-            }
+            play()
+
         });
 
 
         $("#crystal2").on("click", function () {
             totalScore = crystal2 + totalScore
             $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-
-            if (totalScore === randomNumber) {
-                wins++;
-                $("#wins").html("Wins: " + wins);
-                console.log("win");
-            }
-            else if (totalScore > randomNumber) {
-                losses++
-                $("#losses").text("Losses: " + losses);
-                console.log("loss");
-            }
+            play()
         });
 
         $("#crystal3").on("click", function () {
             totalScore = crystal3 + totalScore
             $(".scoreTally").html("<h4>" + totalScore + "</h4>")
-            if (totalScore === randomNumber) {
-                wins++;
-                $("#wins").html("Wins: " + wins);
-                console.log("win");
-            }
-            else if (totalScore > randomNumber) {
-                losses++
-                $("#losses").text("Losses: " + losses);
-                console.log("loss");
-            }
+            play()
 
         });
 
         $("#crystal4").on("click", function () {
             totalScore = crystal4 + totalScore
             $(".scoreTally").html("<h4>" + totalScore + "</h4>")
+            play()
 
+
+        });
+
+
+        function reset() {
+            totalScore = 0;
+            randomNumber = Math.floor(Math.random() * (120 - 19) + 19);
+            $(".computerChoice").html(randomNumber);
+            $(".scoreTally").html(totalScore);
+        }
+
+        function play() {
             if (totalScore === randomNumber) {
                 wins++;
                 $("#wins").html("Wins: " + wins);
@@ -153,18 +120,12 @@ $(document).ready(function () {
                 losses++
                 $("#losses").text("Losses: " + losses);
                 console.log("loss");
+                reset()
             }
-
-        });
-
-
-
+        }
 
 
     });
 });
-
-
-
 
 
