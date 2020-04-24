@@ -14,105 +14,114 @@
 </head>
 
 <body>
-    <div class="gameName">
-        <h1>CrystalsCollector!</h1>
-    </div>
+    <!-- Bootstrap Container  -->
+    <div class="gameContainer">
+        <div class="totalContainer">
 
-    <div class="directions">
-        <p> You will be given a random number at the start of the game.
-            <br>
-            <br>
-            There are four crystals below. By clicking on a crystal you will add a specific amount of points to your
-            total score.
-            <br>
-            <br>
-            You win the game by matching your total score to random number, you lose the game if your total score
-            goes above the random number.
-            <br>
-            <br>
-            The value of each crystal is hidden from you until you click on it.
-            Each time when the game starts, the game will change the values of each crystal.</p>
-    </div>
-
-    <!-- Bootstrap Container for Score Keeping -->
-    <div class="scoreBoxContainer">
-        <div class="row">
-            <div class="col-md-6" style="height: 120px">
-
-                <!-- Random Number Box -->
-
-                <div class="computerChoice"></div>
-            </div>
-
-            <!-- Score Box  -->
-            <div class="col-md-6" style="height: 120px">
-                <div class="score">
-                    <h2 id="wins">Wins: 0</h2>
-                    <h2 id="losses">Losses: 0</h2>
-                </div>
-            </div>
-            <!-- Close Row -->
-        </div>
-
-        <!-- Crystals  -->
-        <div class="crystals">
+            <!-- Game Title -->
             <div class="row">
+                <div class="col-md-12" style="border: 1px solid pink">
+                    <h1>CrystalsCollector!</h1>
+                </div>
+            </div>
 
-                <div class="col-md-3">
-                    <button class='crystalButton' id='crystal1'>
-                        <img class="crystal-image" src="assets/images/bird.png" alt="bird">
-                    </button>
+            <!-- Directions  -->
+            <div class="row">
+                <div class="col-md-12" style="border: 1px solid pink">
+                    <div class="directions">
+                        <p> You will be given a random number at the start of the game.
+                            <br>
+                            <br>
+                            There are four crystals below. By clicking on a crystal you will add a specific amount of
+                            points
+                            to your
+                            total score.
+                            <br>
+                            <br>
+                            You win the game by matching your total score to random number, you lose the game if your
+                            total
+                            score
+                            goes above the random number.
+                            <br>
+                            <br>
+                            The value of each crystal is hidden from you until you click on it.
+                            Each time when the game starts, the game will change the values of each crystal.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Random Number & Score Box Container-->
+            <div class="row style= height: 150px">
+                <div class="col-md-6" style="border: 1px solid pink">
+
+                    <!-- Random Number Box -->
+                    <div class=" computerChoice"></div>
                 </div>
 
-                <div class="col-md-3">
-                    <button class='crystalButton' id='crystal2'>
-                        <img class="crystal-image" src="assets/images/tree.png" alt="tree">
-                    </button>
+                <!-- Score Box  -->
+                <div class="col-md-6" style="border: 1px solid pink">
+                    <div class="score">
+                        <h2 id="wins">Wins: 0</h2>
+                        <h2 id="losses">Losses: 0</h2>
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-md-3">
-                    <button class='crystalButton' id='crystal3'>
-                        <img class="crystal-image" src="assets/images/heart.png" alt="heart">
-                    </button>
+            <!-- Crystals  -->
+            <div class="crystals">
+                <div class="row" style="border: 1px solid pink; height: 120px">
+
+                    <div class="col-md-3">
+                        <button class='crystalButton' id='crystal1'>
+                            <img class="crystal-image" src="assets/images/bird.png" alt="bird">
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class='crystalButton' id='crystal2'>
+                            <img class="crystal-image" src="assets/images/tree.png" alt="tree">
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class='crystalButton' id='crystal3'>
+                            <img class="crystal-image" src="assets/images/heart.png" alt="heart">
+                        </button>
+                    </div>
+
+                    <div class="col-md-3">
+                        <button class='crystalButton' id='crystal4'>
+                            <img class="crystal-image" src="assets/images/gem.png" alt="gem">
+                        </button>
+                    </div>
                 </div>
+            </div>
 
-                <div class="col-md-3">
-                    <button class='crystalButton' id='crystal4'>
-                        <img class="crystal-image" src="assets/images/gem.png" alt="gem">
-                    </button>
+
+            <!-- Total Score Intro -->
+            <div class="row" style=" height: 40px">
+                <div class="col-md-12" style="border: 1px solid pink">
+                    <div class="totalScore">
+                        <h3>Your total score is:</h3>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Score Tally -->
+            <div class="row" style="height: 100px">
+                <div class="col-md-12" style=" border: 1px solid pink">
+                    <div class="scoreTally">
+                        <h4>0</h4>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <!-- Total Score Intro -->
-    <div class="totalScoreContainer">
-        <div class="row">
-            <div class="col-md-6" style="height: 40px">
-                <div class="totalScore">
-                    <h3>Your total score is:</h3>
-                </div>
-            </div>
-        </div>
-
-        <!-- Score Tally -->
-
-        <div class="row">
-            <div class="col-md-6" style="height: 100px">
-                <div class="scoreTally">
-                    <h4>0</h4>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Bootstrap Container Close  -->
+        <!-- Bootstrap Container Close  -->
     </div>
 
 
-
+    <!-- Link to Javascript File -->
     <script defer src="assets/javascript/game.js"></script>
-
-
 </body>
 
 </html>

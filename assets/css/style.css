@@ -6,9 +6,8 @@ h1 {
     width: 285px;
     height: 70px;
     text-align: center;
-    margin-top: 50px;
-    margin-left: 25px;
-    padding-top: 25px;
+    margin-top: 30px;
+    padding-top: 10px;
 }
 
 h2{
@@ -29,6 +28,7 @@ h4{
     color: white;
     margin-left: 10px;
 }
+
 body{
     background-image: url("../images/zigzag.jpg");
 }
@@ -39,7 +39,6 @@ p{
     padding-left: 10px;
     margin-top: 5px;
     padding-top: 15px;
-
 }
 
 img{
@@ -48,46 +47,54 @@ img{
 }
 
 .directions{
-    width: 420px;
+    width: 450px;
     height: 400px;
     line-height: 25px;
     background-color: rgb(236, 221, 201);
     margin-top: 20px;
-    margin-left: 25px;
 }
 
-.scoreBoxContainer{
-    width: 420px;
-    margin-left: 25px;
-    margin-top: 25px;
-}
 .computerChoice{
     background-color: rgb(46, 129, 46);
     width: 200px;
     height: 100px;
+    margin-top: 25px;
 }
+
 .score{
     background-color: rgb(107, 217, 221);
     width: 80px;
     height: 100px;
     line-height: 20px;
-    /* margin-top: 20px; */
+    margin-top:25px;
 }
 
+.crystalButton{
+    margin-top: 25px;
+}
 
-.totalScoreContainer{
-    width: 420px;
+.totalContainer{
+    width: 450px;
     margin-left: 25px;
     margin-top: 25px;
 }
+
 .totalScore{
 background-color: rgb(32, 156, 156);
 width: 200px;
 height: 30px;
+margin-top: 5px;
 }
 
 .scoreTally{
     background-color: rgb(32, 156, 156);
     width: 200px;
     height: 100px;
+    margin-top: 5px;
+}
+
+@media screen and (max-width: 700px){
+   .crystals{
+       height:450px;
+   } 
 }
